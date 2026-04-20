@@ -1,0 +1,9 @@
+<sh-title txt="Pokemones" sizeTxt="5rem"></sh-title>
+
+<sh-loader *ngIf="isLoading"></sh-loader>
+
+<div *ngIf="!isLoading" class="ctn-cards">
+  <h2 *ngFor="let p of pokemons">
+    {{ p.name }}
+  </h2>
+</div>

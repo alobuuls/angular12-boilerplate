@@ -18,6 +18,11 @@ export class ShMenuComponent {
       text: 'Nosotros',
       path: '/about'
     },
+
+    {
+      text: 'Pokemones',
+      path: '/pokemons'
+    },
   ];
 
   constructor() { }

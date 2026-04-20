@@ -1,0 +1,14 @@
+.ctn-cards {
+  background-color: #000000;
+  max-width: 90%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  padding: 2rem;
+  gap: 2rem;
+
+  & h2 {
+    color: #ffffff;
+    text-align: center;
+  }
+}

@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from '@pages/home/home.component';
 import { NotFoundComponent } from '@pages/404/not-found.component';
 import { AboutComponent } from '@pages/about/about.component';
+import { PokemonsComponent } from '@pages/pokemons/pokemons.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,11 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+
+  {
+    path: 'pokemons',
+    component: PokemonsComponent
   },
 
   {
