@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    <li *ngFor="let item of menuList" routerLinkActive="enabled">
+      <a [routerLink]="[item.path]">
+        {{ item.text }}
+      </a>
+    </li>
+  </ul>
+</nav>

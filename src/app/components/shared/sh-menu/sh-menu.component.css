@@ -1,0 +1,51 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #000000;
+  padding: 1rem;
+  column-gap: 1rem;
+
+  & ul {
+    list-style: none;
+  }
+
+  & li {
+    display: inline-block;
+    margin: 1rem;
+
+    &.enabled {
+      & > a {
+        color: lime;
+      }
+
+      & > a:before {
+        background-color: lime;
+        width: 100%;
+      }
+    }
+
+    & a {
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      text-decoration: none;
+      font-size: 1.25rem;
+      position: relative;
+      transition: color 1s ease-in-out;
+
+      &:hover:before {
+        width: 100%;
+      }
+
+      &:before {
+        background-color: #fff;
+        content: '';
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        transition: width 0.4s ease-in-out;
+        width: 0;
+      }
+    }
+  }
+}
