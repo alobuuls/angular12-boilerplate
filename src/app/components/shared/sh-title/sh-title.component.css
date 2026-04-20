@@ -1,0 +1,52 @@
+.box {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	position: relative;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.box .lightbar {
+	animation: animate-light-bar 1s 2 alternate forwards;
+	background-color: #000000;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #009b46,
+							 0 0 20px #009b46,
+							 0 0 40px #009b46,
+							 0 0 80px #009b46,
+							 0 0 120px #009b46;
+	height: 100%;
+	left: calc(50% - 10rem);
+	position: absolute;
+	top: 0;
+  will-change: transform;
+	width: 10px;
+	z-index: 2;
+}
+
+.box h2 {
+	color: #000000;
+	font-size: 5rem;
+	letter-spacing: 0.1rem;
+}
+
+@keyframes animate-light-bar {
+	0%,
+	5% {
+		transform: scaleY(0) translateX(0);
+	}
+
+	10% {
+		transform: scaleY(1) translateX(0);
+	}
+
+	90% {
+		transform: scaleY(1) translateX(20rem);
+	}
+
+	95%,
+	100% {
+		transform: scaleY(0) translateX(20rem);
+	}
+}

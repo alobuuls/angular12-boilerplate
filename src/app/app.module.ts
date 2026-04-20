@@ -8,14 +8,18 @@ import { routes } from './app.routes';
 // Components
 import { AppComponent } from './app.component';
 import { ShMenuComponent } from '@sh-components/sh-menu/sh-menu.component';
-import { AboutComponent } from '@pages/about/about.component';
+import { ShTitleComponent } from '@sh-components/sh-title/sh-title.component';
+
+// Pages
 import { HomeComponent } from '@pages/home/home.component';
+import { AboutComponent } from '@pages/about/about.component';
 import { NotFoundComponent } from '@pages/404/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShMenuComponent,
+    ShTitleComponent,
     HomeComponent,
     AboutComponent,
     NotFoundComponent
