@@ -1,1 +1,21 @@
 <sh-title txt="Nosotros"></sh-title>
+
+<p>
+  El mensaje es: <b> {{ this.msg$ | async }} </b>
+</p>
+
+<section>
+  <div>
+    <label>
+      Mensaje a emitir:
+
+      <input type="text" placeholder="hola" [(ngModel)]="msgForm">
+    </label>
+  </div>
+
+  <div>
+    <button (click)="emitMsg()">
+      Envíar
+    </button>
+  </div>
+</section>

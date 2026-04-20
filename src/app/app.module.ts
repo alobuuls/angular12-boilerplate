@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // Routing
 import { routes } from './app.routes';
@@ -26,7 +27,8 @@ import { NotFoundComponent } from '@pages/404/not-found.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })
