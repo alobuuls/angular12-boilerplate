@@ -30,6 +30,10 @@ export class PokemonsComponent implements OnInit {
     });
   }
 
+  getDataFromChild(wasClickedTitleChild:boolean) {
+    this.activeContainer = wasClickedTitleChild;
+  }
+
   ngOnDestroy(): void {
     this.suscriptionPokeApi.unsubscribe();
   }

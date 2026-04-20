@@ -6,9 +6,14 @@
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   padding: 2rem;
   gap: 2rem;
+  transition: background-color 0.4s ease-in-out;
 
   & h2 {
     color: #ffffff;
     text-align: center;
+  }
+
+  &.active {
+    background-color: #3d0101;
   }
 }

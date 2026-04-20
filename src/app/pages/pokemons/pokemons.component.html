@@ -1,9 +1,7 @@
-<sh-title txt="Pokemones" sizeTxt="5rem"></sh-title>
+<sh-title txt="Pokemones"></sh-title>
 
 <sh-loader *ngIf="isLoading"></sh-loader>
 
-<div *ngIf="!isLoading" class="ctn-cards">
-  <h2 *ngFor="let p of pokemons">
-    {{ p.name }}
-  </h2>
+<div *ngIf="!isLoading" class="ctn-cards" [ngClass]="{'active': activeContainer}">
+  <sh-title *ngFor="let pokemon of pokemons" [txt]="pokemon.name" colorTxt="white" sizeTxt="2rem" (wasClickedTitle)="getDataFromChild($event)"></sh-title>
 </div>

@@ -1,9 +1,13 @@
+:host {
+  --size-title: 5rem;
+}
+
 .box {
 	align-items: center;
 	display: flex;
 	justify-content: center;
 	position: relative;
-  margin-top: 1rem;
+  margin-block: 1rem;
   text-align: center;
 }
 
@@ -17,7 +21,7 @@
 							 0 0 80px #009b46,
 							 0 0 120px #009b46;
 	height: 100%;
-	left: calc(50% - 10rem);
+	left: calc(50% - calc(var(--size-title) * 3));
 	position: absolute;
 	top: 0;
   will-change: transform;
@@ -27,7 +31,8 @@
 
 .box h2 {
 	color: #000000;
-	font-size: 5rem;
+  cursor: pointer;
+  font-size: var(--size-title);
 	letter-spacing: 0.1rem;
 }
 
@@ -42,11 +47,11 @@
 	}
 
 	90% {
-		transform: scaleY(1) translateX(20rem);
+		transform: scaleY(1) translateX(calc(var(--size-title) * 6));
 	}
 
 	95%,
 	100% {
-		transform: scaleY(0) translateX(20rem);
+		transform: scaleY(0) translateX(calc(var(--size-title) * 6));
 	}
 }
