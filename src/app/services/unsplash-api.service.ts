@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { of, Observable } from 'rxjs';
@@ -23,14 +23,10 @@ export class UnsplashApiService {
       .set('page', page)
       .set('per_page', perPage);
 
-    const headers = new HttpHeaders({
-      Authorization: `Client-ID ${environment.apiKeyUnsplash}`
-    });
-
     // Construcción del endpoint final
     const endpoint: string = `${environment.apiUnsplash}/${this.searchEndpoint}`;
 
-    return this.http.get<IRespUnsplashSearchApi>(endpoint, { headers, params }).pipe(
+    return this.http.get<IRespUnsplashSearchApi>(endpoint, { params }).pipe(
 
       // Transforma la respuesta de la API al formato que consume el componente
       map(data => ({
@@ -60,13 +56,9 @@ export class UnsplashApiService {
   }
 
   getPhotoDetailById(id:string): Observable<IPhotoDetailServiceRes> {
-    const headers = new HttpHeaders({
-      Authorization: `Client-ID ${environment.apiKeyUnsplash}`
-    });
-
     const endpoint:string = `${environment.apiUnsplash}/${this.photosEndpoint}/${id}`;
 
-    return this.http.get<IRespUnsplashApi>(endpoint, { headers }).pipe(
+    return this.http.get<IRespUnsplashApi>(endpoint).pipe(
       map(data => ({data, loading: false, msgError: null})),
       catchError(err => of({data: null, loading: false, msgError: err})),
       startWith({data: null, loading: true, msgError: null})

@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 // Routing
 import { routes } from './app.routes';
+
+// Interceptors
+import { HeadersInterceptor } from '@interceptors/headers.interceptor';
+import { ApiKeyUnsplashInterceptor } from '@interceptors/api-key-unsplash.interceptor';
 
 // Components
 import { AppComponent } from './app.component';
@@ -38,7 +42,19 @@ import { NotFoundComponent } from '@pages/404/not-found.component';
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: HeadersInterceptor
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: ApiKeyUnsplashInterceptor
+    }
   ],
   bootstrap: [AppComponent]
 })
