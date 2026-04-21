@@ -1,0 +1,23 @@
+<h1>
+  Form Template
+</h1>
+
+<form (ngSubmit)="sendForm()">
+  <div class="ctn-input">
+    <label for="nit">Nit</label>
+    <input id="nit" name="nit" [(ngModel)]="formCompany.nit" type="number">
+  </div>
+
+  <div class="ctn-input">
+    <label for="email">Company Email</label>
+    <input id="email" name="email" [(ngModel)]="formCompany.email" type="email">
+  </div>
+
+  <div class="ctn-btns-form">
+    <button type="submit">
+      Send
+    </button>
+  </div>
+</form>
+
+{{ formCompany | json }}

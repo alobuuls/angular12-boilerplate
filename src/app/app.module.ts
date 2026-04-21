@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 // Routing
@@ -23,6 +23,14 @@ import { AboutComponent } from '@pages/about/about.component';
 import { PokemonsComponent } from '@pages/pokemons/pokemons.component';
 import { PhotosComponent } from '@pages/photos/photos.component';
 import { PhotoDetailComponent } from '@pages/photos/detail/photo-detail.component';
+import { FormsPageComponent } from '@pages/forms/forms.page.component';
+
+// Subpages
+import { FormTemplateComponent } from '@pages/forms/form-template/form-template.component';
+import { FormControlComponent } from '@pages/forms/form-control/form-control.component';
+import { FormGroupComponent } from '@pages/forms/form-group/form-group.component';
+
+import { FormBuilderComponent } from '@pages/forms/form-builder/form-builder.component';
 import { AdminComponent } from '@pages/admin/admin.component';
 import { NotFoundComponent } from '@pages/404/not-found.component';
 
@@ -40,6 +48,11 @@ import { EllipsisPipe } from '@pipes/ellipsis.pipe';
     PokemonsComponent,
     PhotosComponent,
     PhotoDetailComponent,
+    FormsPageComponent,
+    FormTemplateComponent,
+    FormControlComponent,
+    FormGroupComponent,
+    FormBuilderComponent,
     AdminComponent,
     NotFoundComponent,
     EllipsisPipe
@@ -48,7 +61,8 @@ import { EllipsisPipe } from '@pipes/ellipsis.pipe';
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {

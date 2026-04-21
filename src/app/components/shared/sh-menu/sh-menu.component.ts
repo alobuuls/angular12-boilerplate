@@ -33,6 +33,11 @@ export class ShMenuComponent {
       text: 'Admin',
       path: '/admin',
       highlight: true
+    },
+
+    {
+      text: 'Formularios',
+      path: '/forms'
     }
   ];
 
