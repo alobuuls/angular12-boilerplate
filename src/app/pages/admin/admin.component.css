@@ -1,0 +1,15 @@
+h2 {
+  font-size: 3.5rem;
+}
+
+div {
+  background-color: #216bab;
+  color: #ffffff;
+  text-align: left;
+  font-size: 1.75rem;
+  width: 100%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}

@@ -1,3 +1,24 @@
-button.active {
-  background-color: green;
+.form-navigation {
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  gap: 2rem;
+  max-width: 75%;
+  width: 900px;
+
+  & button {
+    padding: 1rem 3rem;
+    transition: background-color 0.5s ease-in-out,
+                color 0.5s ease;
+  }
+
+  & button.active {
+    background-color: #000000;
+    color: lime;
+  }
 }
+
+

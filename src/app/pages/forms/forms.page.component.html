@@ -1,8 +1,12 @@
 <sh-title txt="Formularios"></sh-title>
 
-<button routerLinkActive="active" [routerLink]="['ng-model']">Ir a Form Template</button>
-<button routerLinkActive="active" [routerLink]="['control']">Ir a Form Control</button>
-<button routerLinkActive="active" [routerLink]="['group']">Ir a Form Group</button>
-<button routerLinkActive="active" [routerLink]="['builder']">Ir a Form Builder</button>
+<div class="form-navigation">
+  <button routerLinkActive="active" [routerLink]="['ng-model']">Ir a Form Template</button>
+  <button routerLinkActive="active" [routerLink]="['control']">Ir a Form Control</button>
+  <button routerLinkActive="active" [routerLink]="['group']">Ir a Form Group</button>
+  <button routerLinkActive="active" [routerLink]="['builder']">Ir a Form Builder</button>
+</div>
 
-<router-outlet></router-outlet>
+<section class="ctn-section">
+  <router-outlet></router-outlet>
+</section>

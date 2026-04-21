@@ -1,7 +1,9 @@
 .ctn-cards {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.7);
   max-width: 90%;
   margin-inline: auto;
+  border-radius: 5%;
+  corner-shape: notch;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   padding: 2rem;

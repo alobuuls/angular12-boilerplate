@@ -31,7 +31,6 @@
 
 .box h2 {
 	color: #000000;
-  cursor: pointer;
   font-size: var(--size-title);
 	letter-spacing: 0.1rem;
 }

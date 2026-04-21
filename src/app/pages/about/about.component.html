@@ -1,10 +1,11 @@
 <sh-title txt="Nosotros"></sh-title>
 
-<p>
-  El mensaje es: <b> {{ this.msg$ | async }} </b>
-</p>
 
-<section>
+<section class="ctn-section">
+  <p>
+    El mensaje es: <b> {{ this.msg$ | async }} </b>
+  </p>
+
   <div>
     <label>
       Mensaje a emitir:
@@ -14,8 +15,8 @@
   </div>
 
   <div>
-    <button (click)="emitMsg()">
+    <sh-btn (click)="emitMsg()">
       Envíar
-    </button>
+    </sh-btn>
   </div>
 </section>

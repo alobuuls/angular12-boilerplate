@@ -6,6 +6,7 @@ import { EllipsisPipe } from '@pipes/ellipsis.pipe';
 @Component({
   selector: 'admin',
   templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
 

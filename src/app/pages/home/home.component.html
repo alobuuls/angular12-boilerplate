@@ -1,23 +1,21 @@
 <sh-title txt="Inicio"></sh-title>
 
-<p>
-  La data es: <b> {{ this.msg$ | async }} </b>
-</p>
+<section class="ctn-section">
+  <p>
+    La data es: <b> {{ this.msg$ | async }} </b>
+  </p>
 
-<div>
-  <label>
-    Activar Accesso a ruta protegida
-    <b>
-      /admin
-    </b>
-    <input
-      type="checkbox"
-      [ngModel]="enableAccessToAdmin$ | async"
-      (ngModelChange)="toggleAdminPath($event)"
-    />
-  </label>
-</div>
-
-<sh-btn>
-  Hola
-</sh-btn>
+  <div>
+    <label>
+      Activar Accesso a ruta protegida
+      <b>
+        /admin
+      </b>
+      <input
+        type="checkbox"
+        [ngModel]="enableAccessToAdmin$ | async"
+        (ngModelChange)="toggleAdminPath($event)"
+      />
+    </label>
+  </div>
+</section>

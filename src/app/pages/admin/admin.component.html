@@ -1,65 +1,65 @@
 <sh-title txt="Administrador"></sh-title>
 
-<section>
+<section class="ctn-section">
   <h2>
     PIPES
   </h2>
 
-  <hr />
+  <div>
+    <h3>String Pipes</h3>
+    <p>{{ 'angular pipes' | uppercase }}</p>
+    <p>{{ 'ANGULAR PIPES' | lowercase }}</p>
+    <p>{{ 'hola mundo desde angular' | titlecase }}</p>
+  </div>
 
-  <h3>String Pipes</h3>
-  <p>{{ 'angular pipes' | uppercase }}</p>
-  <p>{{ 'ANGULAR PIPES' | lowercase }}</p>
-  <p>{{ 'hola mundo desde angular' | titlecase }}</p>
+  <div>
+    <h3>Number Pipes</h3>
+    <p>{{ 1234.567 | number }}</p>
+    <p>{{ 1234.567 | number:'1.2-2' }}</p>
+    <p>{{ 0.25 | percent }}</p>
+  </div>
 
-  <hr />
+  <div>
+    <h3>Currency Pipes</h3>
+    <p>{{ 1200 | currency }}</p>
+    <p>{{ 1200 | currency:'USD' }}</p>
+    <p>{{ 1200 | currency:'COP':'symbol' }}</p>
+  </div>
 
-  <h3>Number Pipes</h3>
-  <p>{{ 1234.567 | number }}</p>
-  <p>{{ 1234.567 | number:'1.2-2' }}</p>
-  <p>{{ 0.25 | percent }}</p>
+  <div>
+    <h3>Date Pipes</h3>
+    <p>{{ '2026-01-01' | date }}</p>
+    <p>{{ '2026-01-01' | date:'shortDate' }}</p>
+    <p>{{ '2026-01-01T11:20:00' | date:'full' }}</p>
+  </div>
 
-  <hr />
+  <div>
+    <h3>Slice Pipes</h3>
+    <p>{{ 'Angular es genial' | slice:0:7 }}</p>
+    <p>{{ 'Angular es genial' | slice:8 }}</p>
+    <p>{{ [1,2,3,4,5] | slice:1:4 }}</p>
+  </div>
 
-  <h3>Currency Pipes</h3>
-  <p>{{ 1200 | currency }}</p>
-  <p>{{ 1200 | currency:'USD' }}</p>
-  <p>{{ 1200 | currency:'COP':'symbol' }}</p>
+  <div>
+    <h3>JSON Pipe</h3>
+    <p>{{ { nombre: 'Juan', edad: 25 } | json }}</p>
+    <p>{{ [1,2,3] | json }}</p>
+    <p>{{ { activo: true } | json }}</p>
+  </div>
 
-  <hr />
+  <div>
+    <h3>Pipes Concatenados</h3>
+    <p>{{ 'angular es poderoso' | uppercase | slice:0:10 }}</p>
+    <p>{{ '2026-01-01' | date:'fullDate' | uppercase }}</p>
+    <p>{{ 'ejemplo de pipes encadenados' | titlecase | slice:0:20 }}</p>
+  </div>
 
-  <h3>Date Pipes</h3>
-  <p>{{ '2026-01-01' | date }}</p>
-  <p>{{ '2026-01-01' | date:'shortDate' }}</p>
-  <p>{{ '2026-01-01T11:20:00' | date:'full' }}</p>
-
-  <hr />
-
-  <h3>Slice Pipes</h3>
-  <p>{{ 'Angular es genial' | slice:0:7 }}</p>
-  <p>{{ 'Angular es genial' | slice:8 }}</p>
-  <p>{{ [1,2,3,4,5] | slice:1:4 }}</p>
-
-  <hr />
-
-  <h3>JSON Pipe</h3>
-  <p>{{ { nombre: 'Juan', edad: 25 } | json }}</p>
-  <p>{{ [1,2,3] | json }}</p>
-  <p>{{ { activo: true } | json }}</p>
-
-  <hr />
-
-  <h3>Pipes Concatenados</h3>
-  <p>{{ 'angular es poderoso' | uppercase | slice:0:10 }}</p>
-  <p>{{ '2026-01-01' | date:'fullDate' | uppercase }}</p>
-  <p>{{ 'ejemplo de pipes encadenados' | titlecase | slice:0:20 }}</p>
-
-  <hr />
-
-  <h3>
-    Pipes Personalizados con argumentos
-  </h3>
-  <p> {{ 'Test de prueba de mi pipe' | ellipsis }} </p>
-  <p> {{ 'Hola Buenos días me llamo Alondra y soy una programadora de Angular' | ellipsis:60 }} </p>
-  <p> {{ 'Hola Buenos días me llamo Alondra y soy una programadora de Angular' | ellipsis:14:'*' }} </p>
+  <div>
+    <h3>
+      Pipes Personalizados con argumentos
+    </h3>
+    <p> {{ 'Test de prueba de mi pipe' | ellipsis }} </p>
+    <p> {{ 'Hola Buenos días me llamo Alondra y soy una programadora de Angular' | ellipsis:60 }} </p>
+    <p> {{ 'Hola Buenos días me llamo Alondra y soy una programadora de Angular' | ellipsis:14:'*' }} </p>
+  </div>
 </section>
