@@ -30,11 +30,12 @@
 </h1>
 
 <div *ngIf="!isLoading && photos?.length" class="ctn-photos">
-  <img
-    *ngFor="let p of photos; trackBy: trackByPhoto"
-    loading="lazy"
-    [src]="p?.urls?.regular"
-    [title]="p?.description || p?.alt_description || 'Photo'"
-    [alt]="p?.description || p?.alt_description || 'Photo'"
-  />
+  <a [routerLink]="[p.id]" *ngFor="let p of photos; trackBy: trackByPhoto">
+    <img
+      loading="lazy"
+      [src]="p?.urls?.regular"
+      [title]="p?.description || p?.alt_description || 'Photo'"
+      [alt]="p?.description || p?.alt_description || 'Photo'"
+    />
+  </a>
 </div>

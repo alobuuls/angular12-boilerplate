@@ -1,0 +1,30 @@
+div {
+  background-color: #000;
+  border-radius: 2%;
+  corner-shape: scoop;
+  padding: 2rem;
+  margin-block: 2rem;
+  max-width: 70%;
+  margin-inline: auto;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+
+  & a img {
+    display: block;
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  & > p > a {
+    text-shadow: 0 0 5px #fff;
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  & button {
+    cursor: pointer;
+  }
+}

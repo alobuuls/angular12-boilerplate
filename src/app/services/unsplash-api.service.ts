@@ -5,7 +5,7 @@ import { of, Observable } from 'rxjs';
 import { catchError, map, startWith } from 'rxjs/operators';
 
 // Interfaces
-import { IPhotoServiceRes, IRespUnsplashSearchApi } from '@interfaces/unsplash-api.interace';
+import { IPhotoDetailServiceRes, IPhotoServiceRes, IRespUnsplashApi, IRespUnsplashSearchApi } from '@interfaces/unsplash-api.interace';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ import { IPhotoServiceRes, IRespUnsplashSearchApi } from '@interfaces/unsplash-a
 export class UnsplashApiService {
 
   private searchEndpoint: string = 'search/photos';
+  private photosEndpoint:string = 'photos';
 
   constructor(private http: HttpClient) {}
 
@@ -55,6 +56,20 @@ export class UnsplashApiService {
         loading: true,
         msgError: null
       })
+    );
+  }
+
+  getPhotoDetailById(id:string): Observable<IPhotoDetailServiceRes> {
+    const headers = new HttpHeaders({
+      Authorization: `Client-ID ${environment.apiKeyUnsplash}`
+    });
+
+    const endpoint:string = `${environment.apiUnsplash}/${this.photosEndpoint}/${id}`;
+
+    return this.http.get<IRespUnsplashApi>(endpoint, { headers }).pipe(
+      map(data => ({data, loading: false, msgError: null})),
+      catchError(err => of({data: null, loading: false, msgError: err})),
+      startWith({data: null, loading: true, msgError: null})
     );
   }
 

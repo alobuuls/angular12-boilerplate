@@ -4,6 +4,12 @@ export interface IPhotoServiceRes {
   msgError: Error | null;
 }
 
+export interface IPhotoDetailServiceRes {
+  data: IRespUnsplashApi | null;
+  loading: boolean;
+  msgError: Error | null;
+}
+
 export interface IRespUnsplashSearchApi {
   total:       number;
   total_pages: number;
