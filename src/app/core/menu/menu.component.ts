@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { IMenuItems } from '@interfaces/menu-items';
 
 @Component({
-  selector: 'sh-menu',
-  templateUrl: './sh-menu.component.html',
-  styleUrls: ['./sh-menu.component.css']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class ShMenuComponent {
+export class MenuComponent {
 
   menuList: IMenuItems[] = [
     {
@@ -30,14 +30,14 @@ export class ShMenuComponent {
     },
 
     {
-      text: 'Admin',
-      path: '/admin',
-      highlight: true
+      text: 'Formularios',
+      path: '/forms'
     },
 
     {
-      text: 'Formularios',
-      path: '/forms'
+      text: 'Admin',
+      path: '/admin',
+      highlight: true
     }
   ];
 
