@@ -26,6 +26,9 @@ import { PhotoDetailComponent } from '@pages/photos/detail/photo-detail.componen
 import { AdminComponent } from '@pages/admin/admin.component';
 import { NotFoundComponent } from '@pages/404/not-found.component';
 
+// Pipes
+import { EllipsisPipe } from '@pipes/ellipsis.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,8 @@ import { NotFoundComponent } from '@pages/404/not-found.component';
     PhotosComponent,
     PhotoDetailComponent,
     AdminComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EllipsisPipe
   ],
   imports: [
     BrowserModule,
