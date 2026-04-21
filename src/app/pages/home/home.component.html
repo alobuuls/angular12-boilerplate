@@ -3,3 +3,17 @@
 <p>
   La data es: <b> {{ this.msg$ | async }} </b>
 </p>
+
+<div>
+  <label>
+    Activar Accesso a ruta protegida
+    <b>
+      /admin
+    </b>
+    <input
+      type="checkbox"
+      [ngModel]="enableAccessToAdmin$ | async"
+      (ngModelChange)="toggleAdminPath($event)"
+    />
+  </label>
+</div>

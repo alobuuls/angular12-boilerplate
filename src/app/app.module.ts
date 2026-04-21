@@ -23,6 +23,7 @@ import { AboutComponent } from '@pages/about/about.component';
 import { PokemonsComponent } from '@pages/pokemons/pokemons.component';
 import { PhotosComponent } from '@pages/photos/photos.component';
 import { PhotoDetailComponent } from '@pages/photos/detail/photo-detail.component';
+import { AdminComponent } from '@pages/admin/admin.component';
 import { NotFoundComponent } from '@pages/404/not-found.component';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { NotFoundComponent } from '@pages/404/not-found.component';
     PokemonsComponent,
     PhotosComponent,
     PhotoDetailComponent,
+    AdminComponent,
     NotFoundComponent
   ],
   imports: [

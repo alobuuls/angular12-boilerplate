@@ -32,6 +32,10 @@ nav {
       position: relative;
       transition: color 1s ease-in-out;
 
+      &.protected {
+        color: #d3000e;
+      }
+
       &:hover:before {
         width: 100%;
       }

@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li *ngFor="let item of menuList" routerLinkActive="enabled">
-      <a [routerLink]="[item.path]">
+      <a [routerLink]="[item.path]" [ngClass]="{'protected': item.highlight === true}">
         {{ item.text }}
       </a>
     </li>

@@ -28,6 +28,12 @@ export class ShMenuComponent {
       text: 'Fotos',
       path: '/photos'
     },
+
+    {
+      text: 'Admin',
+      path: '/admin',
+      highlight: true
+    }
   ];
 
   constructor() { }

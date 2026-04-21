@@ -11,11 +11,17 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   msg$!:Observable<string>;
+  enableAccessToAdmin$!: Observable<boolean>;
 
   constructor(private _shareData: ShareDataService) { }
 
   ngOnInit(): void {
     this.msg$ = this._shareData.getMSg();
+    this.enableAccessToAdmin$ = this._shareData.getAdminStatus();
+  }
+
+  toggleAdminPath(val:boolean) {
+    this._shareData.setAdminStatus(val);
   }
 
 }

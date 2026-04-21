@@ -1,4 +1,5 @@
 export interface IMenuItems {
   text: string;
   path: string;
+  highlight?: boolean;
 }
