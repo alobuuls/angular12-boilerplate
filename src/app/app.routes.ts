@@ -2,9 +2,10 @@ import { Routes } from '@angular/router';
 
 // Pages
 import { HomeComponent } from '@pages/home/home.component';
-import { NotFoundComponent } from '@pages/404/not-found.component';
 import { AboutComponent } from '@pages/about/about.component';
 import { PokemonsComponent } from '@pages/pokemons/pokemons.component';
+import { PhotosComponent } from '@pages/photos/photos.component';
+import { NotFoundComponent } from '@pages/404/not-found.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,11 @@ export const routes: Routes = [
   {
     path: 'pokemons',
     component: PokemonsComponent
+  },
+
+  {
+    path: 'photos',
+    component: PhotosComponent
   },
 
   {

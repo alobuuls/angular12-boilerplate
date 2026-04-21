@@ -23,6 +23,11 @@ export class ShMenuComponent {
       text: 'Pokemones',
       path: '/pokemons'
     },
+
+    {
+      text: 'Fotos',
+      path: '/photos'
+    },
   ];
 
   constructor() { }

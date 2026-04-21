@@ -1,0 +1,40 @@
+<sh-title txt="Photos"></sh-title>
+
+<div class="searcher">
+  <label>
+    Search:
+    <input
+      type="search"
+      placeholder="Dolphins"
+      list="animals"
+      [(ngModel)]="searcher"
+      (ngModelChange)="onSearchChange($event)"
+    />
+  </label>
+
+  <datalist id="animals">
+    <option value="lion">Lion</option>
+    <option value="bird">Bird</option>
+    <option value="cat">Cat</option>
+    <option value="dog">Dog</option>
+    <option value="pig">Pig</option>
+  </datalist>
+</div>
+
+<sh-loader *ngIf="isLoading">
+  Loading...
+</sh-loader>
+
+<h1 *ngIf="hasSearched && !isLoading && !(photos?.length)">
+  No hay resultados
+</h1>
+
+<div *ngIf="!isLoading && photos?.length" class="ctn-photos">
+  <img
+    *ngFor="let p of photos; trackBy: trackByPhoto"
+    loading="lazy"
+    [src]="p?.urls?.regular"
+    [title]="p?.description || p?.alt_description || 'Photo'"
+    [alt]="p?.description || p?.alt_description || 'Photo'"
+  />
+</div>
