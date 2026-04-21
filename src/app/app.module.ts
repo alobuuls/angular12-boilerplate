@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { ShMenuComponent } from '@sh-components/sh-menu/sh-menu.component';
 import { ShTitleComponent } from '@sh-components/sh-title/sh-title.component';
 import { ShLoaderComponent } from '@sh-components/sh-loader/sh-loader.component';
+import { ShBtnComponent } from '@sh-components/sh-btn/sh-btn.component';
 
 // Pages
 import { HomeComponent } from '@pages/home/home.component';
@@ -43,6 +44,7 @@ import { EllipsisPipe } from '@pipes/ellipsis.pipe';
     ShMenuComponent,
     ShTitleComponent,
     ShLoaderComponent,
+    ShBtnComponent,
     HomeComponent,
     AboutComponent,
     PokemonsComponent,
