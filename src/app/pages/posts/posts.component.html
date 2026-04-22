@@ -1,0 +1,19 @@
+<sh-title txt="Publicaciones"></sh-title>
+
+<div *ngIf="vm$ | async as vm" class="ctn-section">
+
+  <!-- Loader -->
+  <sh-loader *ngIf="vm.loading"></sh-loader>
+
+  <!-- Error -->
+  <p *ngIf="vm.error">Ocurrió un error</p>
+
+  <!-- Data -->
+  <ul *ngIf="!vm.loading && !vm.error">
+    <li *ngFor="let post of vm.data">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </li>
+  </ul>
+
+</div>

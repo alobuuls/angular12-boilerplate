@@ -28,6 +28,11 @@ export const routes: Routes = [
   },
 
   {
+    path: 'posts',
+    loadChildren: () => import('@pages/posts/posts.module').then(m => m.PostsModule)
+  },
+
+  {
     path: 'forms',
     loadChildren: () => import('@pages/forms/forms.page.module').then(m => m.FormsPageModule)
   },

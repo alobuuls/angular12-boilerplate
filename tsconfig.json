@@ -26,6 +26,7 @@
       "@guards/*": ["src/app/guards/*"],
       "@components/*": ["src/app/components/*"],
       "@shared/*": ["src/app/components/shared/*"],
+      "@helpers/*": ["src/app/helpers/utils/*"],
       "@pages/*": ["src/app/pages/*"],
       "@pipes/*": ["src/app/pipes/*"],
       "@directives/*": ["src/app/directives/*"],

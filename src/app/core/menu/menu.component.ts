@@ -30,6 +30,11 @@ export class MenuComponent {
     },
 
     {
+      text: 'Publicaciones',
+      path: '/posts'
+    },
+
+    {
       text: 'Formularios',
       path: '/forms'
     },
