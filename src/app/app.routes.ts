@@ -6,7 +6,7 @@ import { ProtectedRouteGuard } from '@guards/protected-route.guard';
 // Component
 import { NotFoundComponent } from '@pages/404/not-found.component';
 
-export const routes: Routes = [
+export const globalRoutes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('@pages/home/home.module').then(m => m.HomeModule)
@@ -40,7 +40,8 @@ export const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('@pages/admin/admin.module').then(m => m.AdminModule),
-    canLoad: [ProtectedRouteGuard]
+    canLoad: [ProtectedRouteGuard],
+    canActivate: [ProtectedRouteGuard]
   },
 
   {

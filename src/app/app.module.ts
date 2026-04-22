@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { PreloadAllModules, RouterModule } from '@angular/router';
+
+// Routing
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 // Modules
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
-
-// Routing
-import { routes } from 'src/app/app.routes';
 
 // Components
 import { AppComponent } from 'src/app/app.component';
@@ -22,9 +21,7 @@ import { NotFoundComponent } from '@pages/404/not-found.component';
     BrowserModule,
     CoreModule,
     SharedModule,
-    RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules
-    })
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
