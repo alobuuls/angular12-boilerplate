@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// Guards
+import { PendingChangesFormGuard } from '@guards/pending-changes-form.guard';
+
 // Components
 import { FormsPageComponent } from '@pages/forms/forms.page.component';
 import { FormTemplateComponent } from '@pages/forms/form-template/form-template.component';
@@ -30,7 +33,8 @@ export const routesForms: Routes = [
 
       {
         path: 'builder',
-        component: FormBuilderComponent
+        component: FormBuilderComponent,
+        canDeactivate: [PendingChangesFormGuard]
       },
 
       {
