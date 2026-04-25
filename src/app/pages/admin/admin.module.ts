@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routing
 import { AdminRoutingModule } from '@pages/admin/admin-routing.module';
@@ -15,7 +14,6 @@ import { AdminComponent } from '@pages/admin/admin.component';
     AdminComponent
   ],
   imports: [
-    CommonModule,
     SharedModule,
     AdminRoutingModule
   ]

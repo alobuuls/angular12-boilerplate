@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routes
 import { PhotosRoutingModule } from '@pages/photos/photos-routing.module';
@@ -19,7 +18,6 @@ import { PhotoDetailComponent } from '@pages/photos/detail/photo-detail.componen
     PhotoDetailComponent,
   ],
   imports: [
-    CommonModule,
     SharedModule,
     PhotosRoutingModule
   ]

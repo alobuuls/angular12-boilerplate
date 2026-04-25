@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routing
 import { PokemonsRoutingModule } from '@pages/pokemons/pokemon-routing.module';
@@ -15,7 +14,6 @@ import { PokemonsComponent } from '@pages/pokemons/pokemons.component';
     PokemonsComponent
   ],
   imports: [
-    CommonModule,
     SharedModule,
     PokemonsRoutingModule
   ]

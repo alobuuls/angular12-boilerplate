@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routing
 import { PostsRoutingModule } from '@pages/posts/posts-routing.module';
@@ -15,7 +14,6 @@ import { PostsComponent } from '@pages/posts/posts.component';
     PostsComponent
   ],
   imports: [
-    CommonModule,
     SharedModule,
     PostsRoutingModule
   ]

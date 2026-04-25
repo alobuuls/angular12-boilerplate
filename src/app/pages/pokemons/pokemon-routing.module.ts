@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Components
 import { PokemonsComponent } from '@pages/pokemons/pokemons.component';
 
-export const routesPokemons: Routes = [
+const routesPokemons: Routes = [
   {
     path: '',
     component: PokemonsComponent

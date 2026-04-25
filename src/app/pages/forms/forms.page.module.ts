@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routing
 import { FormsPageRoutingModule } from '@pages/forms/forms.page-routing.module';
@@ -25,7 +24,6 @@ import { FormBuilderComponent } from '@pages/forms/form-builder/form-builder.com
     FormBuilderComponent,
   ],
   imports: [
-    CommonModule,
     SharedModule,
     FormsPageRoutingModule
   ]

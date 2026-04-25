@@ -7,7 +7,7 @@ import { PhotosComponent } from '@pages/photos/photos.component';
 // Subpages
 import { PhotoDetailComponent } from '@pages/photos/detail/photo-detail.component';
 
-export const routesPhotos: Routes = [
+const routesPhotos: Routes = [
   {
     path: '',
     component: PhotosComponent,

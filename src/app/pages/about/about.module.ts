@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routing
 import { AboutRoutingModule } from '@pages/about/about-routing.module';
@@ -15,7 +14,6 @@ import { AboutComponent } from '@pages/about/about.component';
     AboutComponent
   ],
   imports: [
-    CommonModule,
     SharedModule,
     AboutRoutingModule
   ]

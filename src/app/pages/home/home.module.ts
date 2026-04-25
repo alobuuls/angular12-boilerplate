@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // Routing
 import { HomeRoutingModule } from '@pages/home/home-routing.module';
@@ -15,7 +14,6 @@ import { HomeComponent } from '@pages/home/home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule,
     SharedModule,
     HomeRoutingModule
   ]

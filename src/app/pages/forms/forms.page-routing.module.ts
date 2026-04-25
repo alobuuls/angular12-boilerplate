@@ -11,7 +11,7 @@ import { FormControlComponent } from '@pages/forms/form-control/form-control.com
 import { FormGroupComponent } from '@pages/forms/form-group/form-group.component';
 import { FormBuilderComponent } from '@pages/forms/form-builder/form-builder.component';
 
-export const routesForms: Routes = [
+const routesForms: Routes = [
   {
     path: '',
     component: FormsPageComponent,
