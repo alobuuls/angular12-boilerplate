@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 
 // --- Interfaces & Constants ---
-export const LOADING_MESSAGES = ['Loading', 'Getting data', 'We are about to finish this', 'Almost there', 'Just one second more'] as const;
+export const LOADING_MESSAGES = ['Cargando', 'Obteniendo datos', 'Procesando tu solicitud', 'Finalizando los últimos detalles', 'Ya casi terminamos'] as const;
 
 export interface IErrResp {
   message: string;

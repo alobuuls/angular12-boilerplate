@@ -1,11 +1,9 @@
-<h1>
-  Form Group
-</h1>
+<h1>Form Group</h1>
 
 <form [formGroup]="formCompany" (ngSubmit)="sendData()">
   <div class="ctn-input">
     <label for="nit_company">Nit</label>
-    <input id="nit_company" formControlName="nit_company" type="text">
+    <input id="nit_company" formControlName="nit_company" type="text" />
 
     <div class="error" [hidden]="nit_company.pristine">
       <p *ngIf="nit_company.errors?.['required']">El nit es requerido</p>
@@ -14,8 +12,8 @@
   </div>
 
   <div class="ctn-input">
-    <label for="email_company">Company Email</label>
-    <input id="email_company" formControlName="email_company" type="email">
+    <label for="email_company">Correo De Empresa</label>
+    <input id="email_company" formControlName="email_company" type="email" />
 
     <div class="error" [hidden]="email_company.pristine">
       <p *ngIf="email_company.errors?.['required']">El email es requerido</p>
@@ -24,9 +22,7 @@
   </div>
 
   <div class="ctn-btns-form">
-    <button type="submit" [disabled]="nit_company.invalid || email_company.invalid">
-      Send
-    </button>
+    <button type="submit" [disabled]="nit_company.invalid || email_company.invalid">Envíar</button>
   </div>
 </form>
 

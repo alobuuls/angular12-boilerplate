@@ -4,9 +4,7 @@
 
 <ng-template #content>
   <ng-container *ngIf="imgDetail as img">
-
     <div>
-
       <p>
         <img
           [src]="img.user?.profile_image?.small"
@@ -14,7 +12,7 @@
           [title]="img.user?.name || 'User'"
         />
 
-        Taken By
+        Tomada por:
 
         <a
           *ngIf="img.user?.instagram_username"
@@ -29,30 +27,24 @@
         </span>
       </p>
 
-      <p>
-        Created At {{ img.created_at | date:'MMMM d, y' }}
-      </p>
+      <p>Creado el {{ img.created_at | date: 'dd/MM/yyyy' }}</p>
 
-      <a
-        *ngIf="img.links?.html"
-        [href]="img.links.html"
-        target="_blank"
-      >
+      <a *ngIf="img.links?.html" [href]="img.links.html" target="_blank">
         <img
           loading="lazy"
           [src]="img.urls?.regular"
-          [alt]="img.description || img.alt_description || 'Photo'"
-          [title]="img.description || img.alt_description || 'Photo'"
+          [alt]="img.alternative_slugs.es?.replaceAll('-', ' ') || img.description || img.alt_description || 'Foto'"
+          [title]="img.alternative_slugs.es?.replaceAll('-', ' ') || img.description || img.alt_description || 'Foto'"
         />
       </a>
 
       <p>
-        {{ img.description || img.alt_description || 'No description' }}
+        {{
+          img.alternative_slugs.es?.replaceAll('-', ' ') || img.description || img.alt_description || 'Sin descripción'
+        }}
       </p>
 
-      <button (click)="goBack()">
-        Go back
-      </button>
+      <button (click)="goBack()">Go back</button>
     </div>
   </ng-container>
 </ng-template>

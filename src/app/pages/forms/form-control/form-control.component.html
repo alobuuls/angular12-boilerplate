@@ -1,11 +1,9 @@
-<h1>
-  Form Control
-</h1>
+<h1>Form Control</h1>
 
 <form (ngSubmit)="sendData()">
   <div class="ctn-input">
     <label for="nitCompany">Nit</label>
-    <input id="nitCompany" [formControl]="nitCompany" type="text">
+    <input id="nitCompany" [formControl]="nitCompany" type="text" />
 
     <div class="error" [hidden]="nitCompany.pristine">
       <p *ngIf="nitCompany.errors?.['required']">El nit es requerido</p>
@@ -14,8 +12,8 @@
   </div>
 
   <div class="ctn-input">
-    <label for="emailCompany">Company Email</label>
-    <input id="emailCompany" [formControl]="emailCompany" type="email">
+    <label for="emailCompany">Correo De Empresa</label>
+    <input id="emailCompany" [formControl]="emailCompany" type="email" />
 
     <div class="error" [hidden]="emailCompany.pristine">
       <p *ngIf="emailCompany.errors?.['required']">El email es requerido</p>
@@ -24,9 +22,7 @@
   </div>
 
   <div class="ctn-btns-form">
-    <button type="submit" [disabled]="nitCompany.invalid || emailCompany.invalid">
-      Send
-    </button>
+    <button type="submit" [disabled]="nitCompany.invalid || emailCompany.invalid">Envíar</button>
   </div>
 </form>
 

@@ -12,10 +12,9 @@ import { IRespUnsplashApi } from '@interfaces/unsplash-api.interace';
 @Component({
   selector: 'photos',
   templateUrl: './photos.component.html',
-  styleUrls: ['./photos.component.css']
+  styleUrls: ['./photos.component.css'],
 })
 export class PhotosComponent implements OnInit, OnDestroy {
-
   // Subject que emite los cambios del input (búsqueda reactiva)
   private searchSubject = new Subject<string>();
 
@@ -46,34 +45,34 @@ export class PhotosComponent implements OnInit, OnDestroy {
     // - evita llamadas repetidas
     // - filtra valores vacíos
     // - consume la API
-    const searchSub = this.searchSubject.pipe(
+    const searchSub = this.searchSubject
+      .pipe(
+        // Valor inicial (permite cargar desde URL o default 'perros')
+        startWith(this.route.snapshot.queryParams['search'] ?? 'perros'),
 
-      // Valor inicial (permite cargar desde URL o default 'dogs')
-      startWith(this.route.snapshot.queryParams['search'] ?? 'dogs'),
+        // Evita llamadas en cada tecla (espera 400ms)
+        debounceTime(400),
 
-      // Evita llamadas en cada tecla (espera 400ms)
-      debounceTime(400),
+        // Evita repetir búsquedas con el mismo valor
+        distinctUntilChanged(),
 
-      // Evita repetir búsquedas con el mismo valor
-      distinctUntilChanged(),
+        // Limpia estado antes de buscar y valida input
+        filter((q) => {
+          this.searcher = q;
+          this.photos = [];
+          return q && q.trim().length > 0;
+        }),
+        // Cancela peticiones anteriores si el usuario sigue escribiendo
+        switchMap((q) => this._unsplashApi.getPhotos(q))
+      )
+      .subscribe((res) => {
+        this.photos = res.data;
+        this.isLoading = res.loading;
+        this.error = res.msgError ? (res.msgError.message ?? 'Error al cargar fotos') : null;
 
-      // Limpia estado antes de buscar y valida input
-      filter(q => {
-        this.searcher = q;
-        this.photos = [];
-        return q && q.trim().length > 0;
-      }),
-      // Cancela peticiones anteriores si el usuario sigue escribiendo
-      switchMap(q => this._unsplashApi.getPhotos(q))
-    ).subscribe(res => {
-
-      this.photos = res.data;
-      this.isLoading = res.loading;
-      this.error = res.msgError ? res.msgError.message ?? 'Error al cargar fotos' : null;
-
-      // Sincroniza input con queryParams o valor actual
-      this.searcher = this.searcher ?? this.route.snapshot.queryParams['search'] ?? 'dogs';
-    });
+        // Sincroniza input con queryParams o valor actual
+        this.searcher = this.searcher ?? this.route.snapshot.queryParams['search'] ?? 'perros';
+      });
 
     // Guarda la suscripción
     this.sub.add(searchSub);

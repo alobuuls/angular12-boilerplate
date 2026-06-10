@@ -1,11 +1,11 @@
-<sh-title txt="Photos"></sh-title>
+<sh-title txt="Fotos"></sh-title>
 
 <div class="searcher">
   <label>
-    Search:
+    Buscar:
     <input
       type="search"
-      placeholder="Dolphins"
+      placeholder="City"
       list="animals"
       [(ngModel)]="searcher"
       (ngModelChange)="onSearchChange($event)"
@@ -13,29 +13,25 @@
   </label>
 
   <datalist id="animals">
-    <option value="lion">Lion</option>
-    <option value="bird">Bird</option>
-    <option value="cat">Cat</option>
-    <option value="dog">Dog</option>
-    <option value="pig">Pig</option>
+    <option value="León">León</option>
+    <option value="Pájaro">Pájaro</option>
+    <option value="Gato">Gato</option>
+    <option value="Perro">Perro</option>
+    <option value="Cerdo">Cerdo</option>
   </datalist>
 </div>
 
-<sh-loader *ngIf="isLoading">
-  Loading...
-</sh-loader>
+<sh-loader *ngIf="isLoading"> Cargando... </sh-loader>
 
-<h1 *ngIf="hasSearched && !isLoading && !(photos?.length)">
-  No hay resultados
-</h1>
+<h1 *ngIf="hasSearched && !isLoading && !photos?.length">No hay resultados</h1>
 
 <div *ngIf="!isLoading && photos?.length" class="ctn-photos">
   <a [routerLink]="[p.id]" *ngFor="let p of photos; trackBy: trackByPhoto">
     <img
       loading="lazy"
       [src]="p?.urls?.regular"
-      [title]="p?.description || p?.alt_description || 'Photo'"
-      [alt]="p?.description || p?.alt_description || 'Photo'"
+      [title]="p.alternative_slugs.es?.replaceAll('-', ' ') || p?.description || p?.alt_description || 'Foto'"
+      [alt]="p.alternative_slugs.es?.replaceAll('-', ' ') || p?.description || p?.alt_description || 'Foto'"
     />
   </a>
 </div>
