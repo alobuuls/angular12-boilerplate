@@ -8,7 +8,7 @@ import { HeadersInterceptor } from '@interceptors/headers.interceptor';
 
 // Components
 import { MenuComponent } from 'src/app/core/menu/menu.component';
-import { SharedModule } from '@components/shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [

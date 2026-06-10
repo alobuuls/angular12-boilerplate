@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { PhotosRoutingModule } from '@pages/photos/photos-routing.module';
 
 // Modules
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 // Components
 import { PhotosComponent } from '@pages/photos/photos.component';

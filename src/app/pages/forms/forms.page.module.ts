@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsPageRoutingModule } from '@pages/forms/forms.page-routing.module';
 
 // Modules
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 // Components
 import { FormsPageComponent } from '@pages/forms/forms.page.component';

@@ -25,7 +25,7 @@
       "@interceptors/*": ["src/app/interceptors/*"],
       "@guards/*": ["src/app/guards/*"],
       "@components/*": ["src/app/components/*"],
-      "@shared/*": ["src/app/components/shared/*"],
+      "@shared/*": ["src/app/shared/*"],
       "@helpers/*": ["src/app/helpers/utils/*"],
       "@pages/*": ["src/app/pages/*"],
       "@pipes/*": ["src/app/pipes/*"],

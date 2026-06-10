@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AdminRoutingModule } from '@pages/admin/admin-routing.module';
 
 // Modules
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 // Components
 import { AdminComponent } from '@pages/admin/admin.component';
