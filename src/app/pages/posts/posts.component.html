@@ -1,19 +1,27 @@
 <sh-title txt="Publicaciones"></sh-title>
 
 <div *ngIf="vm$ | async as vm" class="ctn-section">
+  <ng-container [ngSwitch]="vm.status">
+    <!-- Loading -->
+    <sh-loader *ngSwitchCase="'loading'"> {{ getLoadingMsg(vm) }}... </sh-loader>
 
-  <!-- Loader -->
-  <sh-loader *ngIf="vm.loading"></sh-loader>
+    <!-- Error -->
+    <p *ngSwitchCase="'error'" class="error">
+      {{ vm.error?.message || 'Ocurrió un error inesperado' }}
+    </p>
 
-  <!-- Error -->
-  <p *ngIf="vm.error">Ocurrió un error</p>
+    <!-- Success -->
+    <ng-container *ngSwitchCase="'success'">
+      <ul *ngIf="vm.data?.length; else empty">
+        <li *ngFor="let post of vm.data; trackBy: trackByPostId">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.body }}</p>
+        </li>
+      </ul>
 
-  <!-- Data -->
-  <ul *ngIf="!vm.loading && !vm.error">
-    <li *ngFor="let post of vm.data">
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.body }}</p>
-    </li>
-  </ul>
-
+      <ng-template #empty>
+        <p>No hay publicaciones disponibles.</p>
+      </ng-template>
+    </ng-container>
+  </ng-container>
 </div>
