@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
-import { PostsComponent } from './posts.component';
+import { PostsComponent } from '@pages/posts/posts.component';
 
 const routesPosts: Routes = [
   {

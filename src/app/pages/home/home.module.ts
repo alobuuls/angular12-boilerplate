@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeRoutingModule } from '@pages/home/home-routing.module';
 
 // Modules
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 // Components
 import { HomeComponent } from '@pages/home/home.component';

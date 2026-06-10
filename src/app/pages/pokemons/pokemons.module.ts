@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { PokemonsRoutingModule } from '@pages/pokemons/pokemon-routing.module';
 
 // Modules
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 // Components
 import { PokemonsComponent } from '@pages/pokemons/pokemons.component';

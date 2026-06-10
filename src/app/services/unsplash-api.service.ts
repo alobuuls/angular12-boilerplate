@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '@env/environment';
 import { of, Observable } from 'rxjs';
 import { catchError, map, startWith } from 'rxjs/operators';
 
@@ -8,40 +8,35 @@ import { catchError, map, startWith } from 'rxjs/operators';
 import { IPhotoDetailServiceRes, IPhotoServiceRes, IRespUnsplashApi, IRespUnsplashSearchApi } from '@interfaces/unsplash-api.interace';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UnsplashApiService {
-
   private searchEndpoint: string = 'search/photos';
-  private photosEndpoint:string = 'photos';
+  private photosEndpoint: string = 'photos';
 
   constructor(private http: HttpClient) {}
 
   getPhotos(q: string, page = 1, perPage = 20): Observable<IPhotoServiceRes> {
-    const params = new HttpParams()
-      .set('query', q)
-      .set('page', page)
-      .set('per_page', perPage);
+    const params = new HttpParams().set('query', q).set('page', page).set('per_page', perPage);
 
     // Construcción del endpoint final
     const endpoint: string = `${environment.apiUnsplash}/${this.searchEndpoint}`;
 
     return this.http.get<IRespUnsplashSearchApi>(endpoint, { params }).pipe(
-
       // Transforma la respuesta de la API al formato que consume el componente
-      map(data => ({
-        data: data.results,     // lista de fotos
-        loading: false,         // finaliza loading
-        msgError: null          // sin error
+      map((data) => ({
+        data: data.results, // lista de fotos
+        loading: false, // finaliza loading
+        msgError: null, // sin error
       })),
 
       // Manejo de errores:
       // retorna estructura consistente para evitar romper la UI
-      catchError(err =>
+      catchError((err) =>
         of({
           data: [],
           loading: false,
-          msgError: err
+          msgError: err,
         })
       ),
 
@@ -50,19 +45,18 @@ export class UnsplashApiService {
       startWith({
         data: [],
         loading: true,
-        msgError: null
+        msgError: null,
       })
     );
   }
 
-  getPhotoDetailById(id:string): Observable<IPhotoDetailServiceRes> {
-    const endpoint:string = `${environment.apiUnsplash}/${this.photosEndpoint}/${id}`;
+  getPhotoDetailById(id: string): Observable<IPhotoDetailServiceRes> {
+    const endpoint: string = `${environment.apiUnsplash}/${this.photosEndpoint}/${id}`;
 
     return this.http.get<IRespUnsplashApi>(endpoint).pipe(
-      map(data => ({data, loading: false, msgError: null})),
-      catchError(err => of({data: null, loading: false, msgError: err})),
-      startWith({data: null, loading: true, msgError: null})
+      map((data) => ({ data, loading: false, msgError: null })),
+      catchError((err) => of({ data: null, loading: false, msgError: err })),
+      startWith({ data: null, loading: true, msgError: null })
     );
   }
-
 }

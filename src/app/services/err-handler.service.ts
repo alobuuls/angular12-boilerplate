@@ -1,6 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IErrResp } from '../interfaces/data-structure-apis';
+import { HttpErrorResponse } from '@angular/common/http';
+
+// Interfaces
+import { IErrResp } from '@interfaces/data-structure-apis';
 
 @Injectable({
   providedIn: 'root',

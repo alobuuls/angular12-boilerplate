@@ -2,13 +2,15 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+// Modules
+import { SharedModule } from '@shared/shared.module';
+
 // Interceptors
 import { ApiKeyUnsplashInterceptor } from '@interceptors/api-key-unsplash.interceptor';
 import { HeadersInterceptor } from '@interceptors/headers.interceptor';
 
 // Components
-import { MenuComponent } from 'src/app/core/menu/menu.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { MenuComponent } from '@core/menu/menu.component';
 
 @NgModule({
   declarations: [
